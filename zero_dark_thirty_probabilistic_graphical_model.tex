@@ -37,13 +37,6 @@
   \factoredge {aphi}   {phi-f}   {phi} ; %
 
   \gate {X-gate} {(X-f)(X-f-caption)} {T}
-
-  % More nodes
-  \node[latent, right=of X-f] (sigma)  {$\epsilon$}; %
-  \node[const, below=of sigma]  (sigma_0) {$\Sigma$}; %
-  
-  \edge{sigma}{X}
-  \edge{sigma_0}{sigma}
   
   \plate {plate1} { %
     (X)(X-gate) %
@@ -57,11 +50,8 @@
     (phi)(phi-f)(phi-f-caption) %
   } {} ; %
   
-  \node[const, below=1.0of X]{$p(\mathcal{X} | \mathcal{T}, \Sigma, \Theta, \Phi) = p(\mathcal{T})p(\mathcal{X})p(\epsilon)p(\Theta)p(\Phi)$} ;
+  \node[const, below=1.0of X]{$p(\mathcal{X} | \mathcal{T}, \Theta, \Phi) = p(T)p(\mathcal{X})p(\Theta)p(\Phi)$} ;
 
-  \node[const, below=1.5of X]{$\mathcal{X} = \mathcal{T} + \epsilon$} ;
-
-  \node[const, below=2.0of X]{$\epsilon \sim \mathcal{N}(0, \Sigma)$} ;
   
 \end{tikzpicture}
 %\endpgfgraphicnamed
